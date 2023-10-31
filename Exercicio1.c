@@ -58,16 +58,18 @@ void maisDeTresVezes(float valorCompra){
     } 
 
     int parcelas;
+
+    do{
     printf("\nDigite o numero de parcelas: ");
     scanf("%d", &parcelas);
 
-    if(parcelas < 3){
-        printf("\nNao e possivel parcelar menos que 3 vezes.\nTente novamente");
+    if(parcelas < 3 || parcelas > 10){
+        printf("\nQuantidade de parcelas invalida.\nTente novamente");
+    }
 
-    } else {
+    } while(parcelas < 3 || parcelas > 10);
 
     float valorParcela = (valorCompra + (valorCompra * (parcelas * 0.03))) / parcelas;
     printf("\nValor das parcelas: %.2f", valorParcela);
-    }
     
 }
